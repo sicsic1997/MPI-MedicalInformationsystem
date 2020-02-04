@@ -1,17 +1,16 @@
 #pragma once
+#include "PatientHistory.h"
 
-using namespace std;
 class Db
 {
 private:
-	vector<PatientHistory> patients;
-public:
-	PatientHistory getPatientByName(string name);
-	void displayPatientNames();
-	void displayPatientHistory(string name);
-	void updatePatientHistory(string name, string details);
+	std::vector<std::shared_ptr<PatientHistory>> patientsHistory;
 	void populateDb();
+public:
+	std::shared_ptr<PatientHistory> getPatientHistoryByName(std::string name);
+	std::vector<std::shared_ptr<PatientHistory>> getPatientsHistory();
+	std::string getPatientNames();
+	bool updatePatientHistory(std::string name, std::string details);
 	Db();
-	~Db();
 };
 

@@ -2,55 +2,52 @@
 #include "Db.h"
 #include "PatientHistory.h"
 
-void Db::displayPatientNames() {
-	for (int i = 0; i < patients.size(); i++) {
-		cout << patients[i].getName() << '\n';
-	}
-}
 
-PatientHistory Db::getPatientByName(string name) {
-	PatientHistory ph;
-	for (int i = 0; i < patients.size(); i++) {
-		if (patients[i].getName() == name) {
-			ph = patients[i];
-			break;
+std::shared_ptr<PatientHistory> Db::getPatientHistoryByName(std::string name) 
+{
+	for (int i = 0; i < patientsHistory.size(); i++) {
+		if (!patientsHistory[i]->getName().compare(name)) {
+			return patientsHistory[i];
 		}
 	}
-	if (ph == NULL) {
-		cout << "Patient not found" << '\n';
-		return NULL;
-	}
-
-	return ph;
+	return nullptr;
 }
 
-void Db::displayPatientHistory(string name) {
-	PatientHistory ph = getPatientByName(name);
-	if (ph == NULL) {
-		return;
-	}
-
-	for (int i = 0; i < ph.getConsultations().size(); i++) {
-		cout << ph.getConsultations()[i].first << ": " << ph.getConsultations()[i].second << '\n';
-	}
+std::vector<std::shared_ptr<PatientHistory>> Db::getPatientsHistory() 
+{
+	return this->patientsHistory;
 }
 
-void Db::updatePatientHistory(string name, string details) {
-	PatientHistory ph = getPatientByName(name);
-	if (ph == NULL) {
-		return;
+std::string Db::getPatientNames() 
+{
+	std::string names = "Patient names are: \n";
+	for (int i = 0; i < patientsHistory.size(); i++) {
+		names = names + "\t" + ". " + patientsHistory[i]->getName() + "\n";
 	}
-	ph.getConsultations().push_back(make_pair(time(0), details));
+	return names;
 }
 
-void Db::populateDb() {
-	PatientHistory *ph1 = new PatientHistory("Andrei");
-	PatientHistory *ph2 = new PatientHistory("Marian");
-	PatientHistory *ph3 = new PatientHistory("Andreea");
-	patients.push_back(ph1);
-	patients.insert(patients.end(), { ph2, ph3 });
+
+bool Db::updatePatientHistory(std::string name, std::string details) 
+{
+	std::shared_ptr<PatientHistory> ph = getPatientHistoryByName(name);
+	if (ph == nullptr) {
+		return false;
+	}
+	ph->addConsultation(make_pair(time(0), details));
+}
+
+void Db::populateDb() 
+{
+	std::shared_ptr<PatientHistory> ph1 = std::make_shared<PatientHistory>("Andrei");
+	std::shared_ptr<PatientHistory> ph2 = std::make_shared<PatientHistory>("Marian");
+	std::shared_ptr<PatientHistory> ph3 = std::make_shared<PatientHistory>("Andreea");
+
+	patientsHistory.push_back(ph1);
+	patientsHistory.push_back(ph2);
+	patientsHistory.push_back(ph3);
 	updatePatientHistory("Andrei", "Consult fara mentiuni extraordinare");
-	updatePatientHistory("Andrei", "Faringoamigdalita");
+	updatePatientHistory("Andrei", "Faringo-amigdalita");
 	updatePatientHistory("Andreea", "Primul consult a decurs ok");
 	updatePatientHistory("Andreea", "Fara boli cronice in familie");
 	updatePatientHistory("Andreea", "Reclama dureri abdominale. Posibila apendicita");
@@ -59,9 +56,5 @@ void Db::populateDb() {
 
 Db::Db()
 {
-}
-
-
-Db::~Db()
-{
+	populateDb();
 }
