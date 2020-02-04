@@ -144,10 +144,14 @@
     <Text Include="..\..\..\..\..\..\vlad.coteanu%40uipath\documents\visual studio 2017\Projects\PPC-MPI-New\PPC-MPI-New\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\..\vlad.coteanu%40uipath\Documents\Visual Studio 2017\Projects\PPC-MPI-New\PPC-MPI-New\Db.h" />
+    <ClInclude Include="..\..\..\..\..\..\vlad.coteanu%40uipath\Documents\Visual Studio 2017\Projects\PPC-MPI-New\PPC-MPI-New\PatientHistory.h" />
     <ClInclude Include="..\..\..\..\..\..\vlad.coteanu%40uipath\documents\visual studio 2017\Projects\PPC-MPI-New\PPC-MPI-New\stdafx.h" />
     <ClInclude Include="..\..\..\..\..\..\vlad.coteanu%40uipath\documents\visual studio 2017\Projects\PPC-MPI-New\PPC-MPI-New\targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\..\vlad.coteanu%40uipath\Documents\Visual Studio 2017\Projects\PPC-MPI-New\PPC-MPI-New\Db.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\vlad.coteanu%40uipath\Documents\Visual Studio 2017\Projects\PPC-MPI-New\PPC-MPI-New\PatientHistory.cpp" />
     <ClCompile Include="..\..\..\..\..\..\vlad.coteanu%40uipath\documents\visual studio 2017\Projects\PPC-MPI-New\PPC-MPI-New\PPC-MPI-New.cpp" />
     <ClCompile Include="..\..\..\..\..\..\vlad.coteanu%40uipath\documents\visual studio 2017\Projects\PPC-MPI-New\PPC-MPI-New\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Entities">
+      <UniqueIdentifier>{c4b43f24-bfa3-41aa-aed7-023918f7f451}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\..\..\..\..\..\vlad.coteanu%40uipath\documents\visual studio 2017\Projects\PPC-MPI-New\PPC-MPI-New\ReadMe.txt" />
@@ -24,6 +27,12 @@
     <ClInclude Include="..\..\..\..\..\..\vlad.coteanu%40uipath\documents\visual studio 2017\Projects\PPC-MPI-New\PPC-MPI-New\targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\vlad.coteanu%40uipath\Documents\Visual Studio 2017\Projects\PPC-MPI-New\PPC-MPI-New\PatientHistory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\vlad.coteanu%40uipath\Documents\Visual Studio 2017\Projects\PPC-MPI-New\PPC-MPI-New\Db.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\..\vlad.coteanu%40uipath\documents\visual studio 2017\Projects\PPC-MPI-New\PPC-MPI-New\stdafx.cpp">
@@ -31,6 +40,12 @@
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\..\vlad.coteanu%40uipath\documents\visual studio 2017\Projects\PPC-MPI-New\PPC-MPI-New\PPC-MPI-New.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\vlad.coteanu%40uipath\Documents\Visual Studio 2017\Projects\PPC-MPI-New\PPC-MPI-New\PatientHistory.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\vlad.coteanu%40uipath\Documents\Visual Studio 2017\Projects\PPC-MPI-New\PPC-MPI-New\Db.cpp">
+      <Filter>Source Files\Entities</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
